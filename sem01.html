@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Aviso Estadías – Semana 01</title>
+<style>
+  :root{
+    --naranja: #F0862B;
+    --naranja-osc: #E17A22;
+    --azul: #14205A;
+    --azul-osc: #0E1740;
+    --gris-texto: #333;
+    --gris-claro: #f4f4f6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background:#ffffff;
+    color:var(--gris-texto);
+  }
+  .topbar{
+    background:var(--naranja);
+    height:34px;
+  }
+  .header{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:18px 40px;
+    border-bottom:1px solid #eee;
+  }
+  .escudo{
+    width:64px;
+    height:64px;
+    border-radius:8px;
+    background:var(--naranja);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-weight:700;
+    font-size:22px;
+    flex-shrink:0;
+  }
+  .marca h1{
+    margin:0;
+    font-size:26px;
+    color:var(--naranja);
+    letter-spacing:1px;
+  }
+  .marca p{
+    margin:2px 0 0;
+    font-size:11px;
+    color:#555;
+    letter-spacing:.5px;
+  }
+  .breadcrumb{
+    padding:14px 40px 0;
+    color:#999;
+    font-size:14px;
+  }
+  .contenedor{
+    display:flex;
+    gap:28px;
+    padding:24px 40px 50px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .sidebar{
+    width:260px;
+    flex-shrink:0;
+  }
+  .sidebar .titulo{
+    background:var(--azul);
+    color:#fff;
+    text-align:center;
+    padding:12px;
+    font-size:18px;
+    font-weight:600;
+  }
+  .sidebar a{
+    display:block;
+    background:var(--naranja);
+    color:#fff;
+    text-decoration:none;
+    padding:14px 16px;
+    font-size:15px;
+    border-bottom:1px solid rgba(255,255,255,.35);
+  }
+  .sidebar a.activo{
+    background:var(--naranja-osc);
+    font-weight:700;
+  }
+  .sidebar a:hover{
+    background:var(--naranja-osc);
+  }
+  .contenido{
+    flex:1;
+  }
+  .titulo-principal{
+    background:var(--azul);
+    color:#fff;
+    text-align:center;
+    padding:20px 24px;
+    font-size:22px;
+    font-weight:600;
+    line-height:1.4;
+  }
+  .seccion{
+    margin-top:26px;
+  }
+  .seccion h2{
+    color:var(--azul);
+    font-size:19px;
+    border-left:6px solid var(--naranja);
+    padding-left:12px;
+    margin-bottom:14px;
+  }
+  .objetivo-caja{
+    background:var(--gris-claro);
+    border-left:4px solid var(--azul);
+    padding:14px 18px;
+    margin-bottom:20px;
+    font-size:15px;
+  }
+  .objetivo-caja strong{color:var(--azul);}
+  ol, ul{
+    font-size:15px;
+    line-height:1.7;
+    padding-left:22px;
+  }
+  ol li::marker, ul li::marker{
+    color:var(--naranja);
+    font-weight:700;
+  }
+  .sub-lista{
+    margin-top:6px;
+    margin-bottom:6px;
+  }
+  .evidencia, .importante{
+    margin-top:22px;
+    padding:16px 20px;
+    border-radius:6px;
+    font-size:15px;
+  }
+  .evidencia{
+    background:#fff3e6;
+    border:1px solid var(--naranja);
+  }
+  .evidencia strong{color:var(--naranja-osc);}
+  .importante{
+    background:#eef0fa;
+    border:1px solid var(--azul);
+  }
+  .importante strong{color:var(--azul);}
+  .boton-reserva{
+    display:inline-block;
+    margin-top:18px;
+    background:var(--naranja);
+    color:#fff;
+    text-decoration:none;
+    padding:12px 26px;
+    border-radius:4px;
+    font-weight:600;
+    font-size:15px;
+  }
+  .boton-reserva:hover{
+    background:var(--naranja-osc);
+  }
+  .enlace-texto{
+    display:block;
+    margin-top:8px;
+    font-size:13px;
+    color:#555;
+    word-break:break-all;
+  }
+  .responsable{
+    margin-top:40px;
+    text-align:center;
+    color:#888;
+    font-size:14px;
+  }
+  .responsable .nombre{
+    color:var(--azul);
+    font-weight:600;
+    font-size:16px;
+    margin-top:4px;
+  }
+  footer{
+    background:var(--azul);
+    color:#cbd0e6;
+    text-align:center;
+    padding:16px;
+    font-size:13px;
+    margin-top:40px;
+  }
+  @media (max-width:760px){
+    .contenedor{flex-direction:column;}
+    .sidebar{width:100%;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar"></div>
+
+  <div class="header">
+    <div class="escudo">UTE</div>
+    <div class="marca">
+      <h1>UTE</h1>
+      <p>UNIVERSIDAD TECNOLÓGICA<br>GENERAL MARIANO ESCOBEDO</p>
+    </div>
+  </div>
+
+  <div class="breadcrumb">Inicio / Estadías / Avisos</div>
+
+  <div class="contenedor">
+
+    <div class="sidebar">
+      <div class="titulo">Estadías</div>
+      <a href="#" class="activo">Semana 01</a>
+      <a href="#">Cronograma</a>
+      <a href="#">Formatos</a>
+      <a href="#">Reglamento de Estadías</a>
+      <a href="#">Contacto de Asesores</a>
+    </div>
+
+    <div class="contenido">
+
+      <div class="titulo-principal">
+        Aviso de Estadías<br>
+        Semana 01 – Inicio y Comunicación
+      </div>
+
+      <div class="seccion">
+        <div class="objetivo-caja">
+          <strong>Objetivo:</strong> Establecer el primer contacto formal con el asesor y definir el horario de asesoría que se mantendrá durante todo el periodo de estadía.
+        </div>
+
+        <h2>Actividad</h2>
+        <ol>
+          <li>Ingresar y revisar el canal de Microsoft Teams.</li>
+          <li>Reservar el horario de asesoría presencial.</li>
+          <li>Publicar una breve presentación con:
+            <ul class="sub-lista">
+              <li>Nombre completo</li>
+              <li>Matrícula</li>
+              <li>Carrera</li>
+              <li>Empresa</li>
+              <li>Área de estadía</li>
+              <li>Nombre provisional del proyecto</li>
+            </ul>
+          </li>
+        </ol>
+
+        <div class="evidencia">
+          <strong>Evidencia:</strong> Registro del horario de asesoría y publicación de presentación en Teams.
+        </div>
+
+        <div class="importante">
+          <strong>Importante:</strong> El horario seleccionado será fijo durante toda la estadía y no podrá modificarse posteriormente.
+        </div>
+
+        <h2 style="margin-top:30px;">Reserva de horario</h2>
+        <p style="font-size:15px;">Da clic en el siguiente botón para reservar tu horario de asesoría presencial:</p>
+
+        <!-- Google Calendar Appointment Scheduling begin -->
+        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+        <script>
+        (function() {
+          var target = document.currentScript;
+          window.addEventListener('load', function() {
+            try {
+              calendar.schedulingButton.load({
+                url: 'https://calendar.google.com/calendar/appointments/AcZssZ0JmyaGRvyHo4oc9SEhbJhXgNk7utqP3b_F7CA=?gv=true',
+                color: '#039BE5',
+                label: 'Programar una cita',
+                target,
+              });
+            } catch (e) {
+              target.style.display = 'none';
+            }
+          });
+        })();
+        </script>
+        <!-- end Google Calendar Appointment Scheduling -->
+
+        <p style="font-size:13px;color:#777;margin-top:14px;">Si el botón anterior no se muestra, usa este enlace directo:</p>
+        <a class="boton-reserva" href="https://calendar.google.com/calendar/appointments/AcZssZ0JmyaGRvyHo4oc9SEhbJhXgNk7utqP3b_F7CA=?gv=true" target="_blank">Reservar horario de asesoría</a>
+      </div>
+
+      <div class="responsable">
+        Asesor de Estadías:
+        <div class="nombre">MAN Pedro Francisco Alarcón</div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    Universidad Tecnológica General Mariano Escobedo · Coordinación de Estadías
+  </footer>
+
+</body>
+</html>
