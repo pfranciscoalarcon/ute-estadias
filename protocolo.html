@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Manual RADAR – Protocolo de Proyecto de Estadía</title>
+<title>Manual RADAR – Protocolo Técnico (Paso 2)</title>
 <style>
 
   :root{
@@ -14,6 +14,7 @@
     --gris-claro: #f6f6f8;
     --rojo: #C0392B;
     --rojo-claro: #fdecea;
+    --verde: #1E8449;
   }
   *{box-sizing:border-box;}
   body{
@@ -74,11 +75,25 @@
     border-left:5px solid var(--naranja);
     padding-left:10px;
     margin:22px 0 10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .limite{
+    display:inline-block;
+    background:var(--naranja);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    padding:2px 9px;
+    border-radius:10px;
+    letter-spacing:.3px;
   }
   p{font-size:14.5px; line-height:1.65; margin:0 0 12px;}
   ol, ul{font-size:14.5px; line-height:1.7; padding-left:22px; margin:0 0 12px;}
   ol li::marker, ul li::marker{color:var(--naranja); font-weight:700;}
-  .instruccion, .ejemplo, .evita, .nota{
+  .instruccion, .ejemplo, .evita, .nota, .correcto{
     margin:14px 0;
     padding:12px 16px;
     border-radius:6px;
@@ -89,14 +104,28 @@
   .instruccion .etq{color:var(--azul); font-weight:700; display:block; margin-bottom:4px; font-size:12.5px; text-transform:uppercase; letter-spacing:.5px;}
   .ejemplo{background:#fff3e6; border-left:4px solid var(--naranja); font-style:italic;}
   .ejemplo .etq{color:var(--naranja-osc); font-weight:700; font-style:normal; display:block; margin-bottom:4px; font-size:12.5px; text-transform:uppercase; letter-spacing:.5px;}
+  .correcto{background:#eafaf0; border-left:4px solid var(--verde); font-style:italic;}
+  .correcto .etq{color:var(--verde); font-weight:700; font-style:normal; display:block; margin-bottom:4px; font-size:12.5px; text-transform:uppercase; letter-spacing:.5px;}
   .evita{background:var(--rojo-claro); border-left:4px solid var(--rojo);}
   .evita .etq{color:var(--rojo); font-weight:700; display:block; margin-bottom:4px; font-size:12.5px; text-transform:uppercase; letter-spacing:.5px;}
   .nota{background:var(--gris-claro); border-left:4px solid #999; font-size:13.5px; color:#555;}
+  .conteo{font-size:12px; color:#888; margin-top:-6px; margin-bottom:12px; font-style:italic;}
   table{width:100%; border-collapse:collapse; margin:12px 0 18px; font-size:13.5px;}
-  th, td{border:1px solid #e2e2e6; padding:8px 10px; text-align:left;}
+  th, td{border:1px solid #e2e2e6; padding:8px 10px; text-align:left; vertical-align:top;}
   th{background:var(--azul); color:#fff; font-weight:600;}
   tr:nth-child(even){background:#f8f8fa;}
   .checklist li{margin-bottom:6px;}
+  .frase-final{
+    text-align:center;
+    background:var(--azul);
+    color:#fff;
+    padding:20px;
+    border-radius:8px;
+    font-size:16px;
+    font-style:italic;
+    margin:18px 0;
+    line-height:1.6;
+  }
   .responsable{
     margin-top:38px;
     padding-top:20px;
@@ -128,17 +157,16 @@
 
     <div class="titulo-principal">
       Manual para la Captura del Protocolo de Proyecto de Estadía
-      <span class="sistema">Sistema RADAR</span>
+      <span class="sistema">Sistema RADAR · Paso 2: Protocolo Técnico</span>
     </div>
 
     
     <div class="intro">
-      <p>El presente manual tiene como finalidad orientar al estudiante en la correcta elaboración y captura de la información correspondiente a su <strong>Protocolo de Proyecto de Estadía</strong> en el sistema RADAR.</p>
-      <p>El protocolo constituye la propuesta inicial del proyecto que se desarrollará durante la estadía profesional. Por esta razón, la información registrada deberá ser <strong>clara, congruente, específica y relacionada directamente con una necesidad, problemática, oportunidad de mejora o proyecto de la empresa o institución receptora</strong>.</p>
-      <p>El sistema RADAR contempla, entre otros, los apartados de nombre del proyecto, alcance, descripción, objetivos, requerimientos, actividades principales y datos de la entidad receptora.</p>
+      <p>El presente manual tiene como finalidad orientar al estudiante en la correcta elaboración y captura de su <strong>Protocolo de Proyecto de Estadía</strong> en el sistema RADAR, conforme al formato definitivo de <strong>Paso 2: Protocolo Técnico</strong>.</p>
+      <p>El sistema contempla campos con límites específicos de caracteres para nombre del proyecto, alcance, requerimientos, descripción, objetivos, actividades y día/hora de cita con el asesor. Por esta razón, la redacción debe ser <strong>clara, específica y concisa</strong>, evitando textos genéricos o demasiado extensos.</p>
       <div class="instruccion">
         <span class="etq">La redacción debe permitir responder con facilidad</span>
-        Qué situación se atenderá, qué se pretende lograr, qué actividades se realizarán y qué resultado se espera obtener.
+        Qué situación se atenderá, qué se pretende lograr, qué actividades se realizarán, qué recursos serán necesarios y hasta dónde llegará el proyecto.
       </div>
     </div>
 
@@ -165,189 +193,190 @@
       <tr><td>Licenciatura en Ingeniería Mecatrónica – TSU en Automatización</td></tr>
     </table>
     <div class="evita"><span class="etq">Ejemplo no recomendado</span>Logística</div>
-    <div class="ejemplo"><span class="etq">Ejemplo recomendado</span>Licenciatura en Ingeniería en Logística – TSU en Cadena de Suministro</div>
-    <p>Utilizar el nombre completo facilita la correcta identificación académica del estudiante y evita inconsistencias en el expediente.</p>
+    <div class="correcto"><span class="etq">Ejemplo recomendado</span>Licenciatura en Ingeniería en Logística – TSU en Cadena de Suministro</div>
 
     <h3>1.3 Nombre del estudiante</h3>
-    <p>Verifica que tu nombre completo aparezca correctamente registrado.</p>
+    <p>Verifica que tu nombre completo aparezca correctamente registrado. Evita utilizar diminutivos, apodos o nombres incompletos.</p>
     <div class="ejemplo"><span class="etq">Ejemplo</span>CARRILLO AGUILAR ROGELIO</div>
-    <p>Evita utilizar diminutivos, apodos o nombres incompletos.</p>
 
     <h3>1.4 Periodo de estadía</h3>
     <p>Este apartado identifica el periodo académico durante el cual se desarrollará la estadía profesional.</p>
     <div class="ejemplo"><span class="etq">Ejemplo</span>Septiembre – Diciembre 2026</div>
-    <p>En RADAR, estos datos forman parte del expediente técnico del estudiante.</p>
 
-    <h2>2. Horario de asesoría</h2>
-    <p>El horario de asesoría corresponde al espacio establecido para recibir seguimiento académico durante el desarrollo de la estadía.</p>
-    <div class="instruccion"><span class="etq">Instrucción</span>Selecciona el día y horario que previamente hayas acordado o reservado con tu asesor académico.</div>
-    <div class="ejemplo"><span class="etq">Ejemplo</span>Jueves – 21:00 horas</div>
-    <p>El horario seleccionado deberá mantenerse como referencia para las sesiones de seguimiento durante el periodo de estadía.</p>
-    <div class="evita"><span class="etq">Evita expresiones imprecisas</span>"Por confirmar", "cuando tenga tiempo" o "después del trabajo".</div>
+    <h2>2. Día y hora de cita con el asesor</h2>
+    <p>Captura el día y horario establecido para tu asesoría académica. Este horario debe coincidir con el previamente seleccionado o acordado, y se mantendrá como referencia durante todo el periodo de estadía.</p>
+    <div class="ejemplo"><span class="etq">Ejemplo</span>Jueves de 9:00 pm a 9:45 pm</div>
+    <div class="evita"><span class="etq">Evita expresiones imprecisas</span>"Por confirmar" · "Cuando pueda" · "Después del trabajo" · "Entre semana".<br>El horario debe ser específico porque será utilizado como referencia para el seguimiento académico.</div>
 
     <h2>3. Nombre del proyecto</h2>
-    <p>El nombre del proyecto debe comunicar de manera concreta qué se realizará y sobre qué proceso, área o situación se trabajará. Debe ser breve, específico y congruente con el proyecto que efectivamente se desarrollará en la empresa.</p>
-    <div class="instruccion"><span class="etq">Estructura recomendada</span>Acción o propósito + proceso, área o situación de aplicación</div>
-    <div class="ejemplo"><span class="etq">Ejemplo</span>Mejora del control de inventarios en el almacén de refacciones</div>
-    <p>Otros ejemplos adecuados:</p>
+    <h3>Reglas del sistema <span class="limite">5 a 55 caracteres</span></h3>
     <ul>
-      <li>Diseño de un sistema de seguimiento de entregas para el área de logística</li>
-      <li>Estandarización del proceso de mantenimiento preventivo de equipos</li>
-      <li>Desarrollo de una herramienta para el seguimiento de solicitudes de soporte técnico</li>
+      <li>Mínimo 5 caracteres, máximo 55 caracteres.</li>
+      <li>Debe iniciar con mayúscula.</li>
+      <li>Utiliza letras, números y espacios simples.</li>
+      <li>Evita símbolos y signos de puntuación.</li>
     </ul>
-    <div class="evita"><span class="etq">Evita nombres como</span>Proyecto de estadía · Proyecto de logística · Mejora de la empresa · Inventarios.<br>Estos títulos son demasiado generales y no permiten conocer con precisión el contenido del proyecto.</div>
-    <p><strong>Comparación</strong></p>
-    <div class="evita"><span class="etq">Poco específico</span>Mejora del almacén.</div>
-    <div class="ejemplo"><span class="etq">Más adecuado</span>Mejora del proceso de recepción y control de materiales en el almacén.</div>
+    <p>El título debe indicar el tema central del proyecto. Evita nombres demasiado amplios o que únicamente mencionen el área donde estás trabajando.</p>
+    <div class="instruccion"><span class="etq">Estructura recomendada</span>Solución, mejora o acción principal + proceso o área específica</div>
+    <div class="correcto"><span class="etq">Ejemplo</span>Sistema de control de inventarios</div>
+    <div class="correcto"><span class="etq">Otro ejemplo</span>Mejora del proceso de recepción de materiales</div>
+    <div class="evita"><span class="etq">Ejemplo poco adecuado</span>Inventarios — identifica un tema, pero no explica qué se realizará.</div>
+    <div class="evita"><span class="etq">Ejemplo incorrecto</span>Proyecto de estadía — no permite conocer cuál será el trabajo técnico.</div>
+    <div class="nota">Antes de continuar, pregúntate: ¿el título permite saber de qué trata mi proyecto sin necesidad de leer la descripción? Si la respuesta es no, hazlo más específico.</div>
 
     <h2>4. Alcance del proyecto</h2>
-    <p>El sistema solicita indicar si el proyecto propuesto será implementado durante la estadía.</p>
-    <h3>¿Cuándo seleccionar "Sí"?</h3>
-    <p>Selecciona esta opción cuando la propuesta será diseñada y, además, aplicada, utilizada o puesta en funcionamiento dentro de la empresa durante tu periodo de estadía.</p>
-    <div class="ejemplo"><span class="etq">Ejemplo</span>Se desarrollará un nuevo formato de control de inventarios y comenzará a utilizarse en el almacén durante el proyecto. — Respuesta: Sí.</div>
-    <h3>¿Cuándo seleccionar "No"?</h3>
-    <p>Selecciona esta opción cuando el trabajo se limite al análisis, diagnóstico, diseño o elaboración de una propuesta y su implementación quede programada para una etapa posterior.</p>
-    <div class="ejemplo"><span class="etq">Ejemplo</span>Se realizará una propuesta para reorganizar físicamente el almacén, pero la empresa tiene previsto realizar la modificación después de concluir la estadía. — Respuesta: No.</div>
-    <p>El alcance debe ser realista y congruente con el tiempo, los recursos disponibles y las decisiones de la empresa.</p>
+    <p>El alcance establece hasta dónde llegará el proyecto durante el periodo de estadía. No se refiere únicamente a lo que te gustaría realizar, sino a lo que realmente será posible desarrollar dentro de la empresa. En la pantalla de RADAR se observa como referencia el alcance <strong>"Práctico / Implementación real"</strong>; la opción exacta deberá seleccionarse conforme a las alternativas disponibles en el sistema.</p>
+    <p>Debes identificar si tu proyecto:</p>
+    <ul>
+      <li>solamente analizará una situación;</li>
+      <li>desarrollará una propuesta;</li>
+      <li>diseñará una herramienta o procedimiento;</li>
+      <li>realizará una prueba;</li>
+      <li>o llegará a una implementación real.</li>
+    </ul>
+    <div class="ejemplo"><span class="etq">Ejemplo de implementación real</span>Desarrollarás un nuevo formato de control de inventarios y éste comenzará a utilizarse en el almacén durante tu estadía. El proyecto tiene alcance práctico porque la solución será aplicada.</div>
+    <div class="ejemplo"><span class="etq">Ejemplo de propuesta</span>Diseñarás una nueva distribución del almacén, pero la empresa realizará las modificaciones físicas después de que termine tu estadía. El proyecto llegará principalmente hasta el diseño o propuesta.</div>
+    <div class="nota">No declares un alcance mayor al que realmente podrás cumplir. Un proyecto sencillo pero terminado tiene mayor valor que uno demasiado ambicioso que quede únicamente en intención.</div>
 
     <h2>5. Descripción del proyecto</h2>
-    <p>La descripción permite explicar brevemente el contexto en el que se desarrollará el proyecto. Debe presentar la situación actual, la necesidad o problemática identificada y la acción principal que se propone realizar.</p>
-    <div class="instruccion"><span class="etq">Estructura recomendada</span>Situación actual + problemática o necesidad + acción que desarrollará el proyecto</div>
-    <div class="ejemplo"><span class="etq">Ejemplo</span>Actualmente, el almacén registra las entradas y salidas de materiales mediante diferentes archivos, lo que dificulta conocer con precisión las existencias disponibles. El proyecto consistirá en analizar el proceso actual y desarrollar una herramienta de control que permita mejorar el registro y seguimiento de los materiales.</div>
-    <p>Esta redacción permite identificar claramente:</p>
-    <ul>
-      <li><strong>Situación actual:</strong> existen diferentes medios de registro.</li>
-      <li><strong>Problema:</strong> existe dificultad para conocer las existencias reales.</li>
-      <li><strong>Proyecto:</strong> desarrollar una herramienta de control.</li>
-    </ul>
-    <div class="evita"><span class="etq">Ejemplo poco recomendable</span>La empresa tiene problemas con los inventarios y voy a ayudar a solucionarlos.<br>Aunque expresa una intención, no explica con precisión cuál es el problema ni qué acciones serán realizadas.</div>
-    <div class="nota">La descripción debe ser breve pero suficiente. Generalmente, un párrafo bien estructurado es adecuado para presentar la idea central del proyecto.</div>
+    <h3>Límite del sistema <span class="limite">Máx. 110 caracteres</span></h3>
+    <p>La descripción debe explicar de forma sencilla: qué situación se atenderá + qué se realizará para atenderla. No es necesario explicar toda la historia de la empresa ni desarrollar aquí el marco teórico.</p>
+    <div class="instruccion"><span class="etq">Fórmula recomendada</span>Necesidad o problema + acción que realizará el proyecto</div>
+    <div class="correcto"><span class="etq">Ejemplo correcto</span>Controlar entradas y salidas para reducir diferencias entre inventario físico y registros</div>
+    <div class="conteo">≈ 89 caracteres</div>
+    <div class="correcto"><span class="etq">Otro ejemplo</span>Estandarizar el mantenimiento preventivo para reducir fallas y mejorar la disponibilidad de equipos</div>
+    <div class="evita"><span class="etq">Ejemplo poco adecuado</span>La empresa tiene problemas en el almacén y se buscará mejorar la situación actual.<br>No especifica cuál es el problema, qué proceso se trabajará ni qué solución se pretende desarrollar.</div>
+    <div class="evita"><span class="etq">Evita antecedentes largos</span>"Durante muchos años la empresa ha presentado diferentes problemáticas relacionadas con el control..." — el campo no está diseñado para explicar antecedentes extensos.</div>
+    <div class="nota">Antes de continuar, verifica que la descripción responda: ¿qué situación voy a atender? y ¿qué voy a hacer al respecto?</div>
 
-    <h2>6. Objetivos del proyecto</h2>
-    <p>El objetivo expresa el resultado principal que se pretende alcanzar mediante el desarrollo del proyecto. RADAR incluye un apartado específico para registrar los objetivos.</p>
-    <p>Un objetivo correctamente redactado debe responder principalmente a tres preguntas: <strong>¿Qué se realizará? ¿Sobre qué proceso, área o situación se trabajará? ¿Para qué se realizará?</strong></p>
-    <h3>¿Cómo debe redactarse?</h3>
-    <p>Se recomienda comenzar con un verbo en infinitivo, es decir, palabras que normalmente terminan en -ar, -er o -ir. Algunos verbos apropiados son: <strong>analizar, identificar, diseñar, desarrollar, implementar, establecer, evaluar, optimizar, reducir, mejorar, estandarizar y documentar.</strong></p>
-    <div class="instruccion"><span class="etq">Estructura recomendada</span>Verbo en infinitivo + qué se realizará + sobre qué + propósito o resultado esperado</div>
-    <div class="ejemplo"><span class="etq">Objetivo final</span>Diseñar un sistema de control de inventarios en el almacén de refacciones para reducir las diferencias entre las existencias físicas y los registros de la empresa.</div>
-    <p>Otros ejemplos por carrera:</p>
+    <h2>6. Objetivos</h2>
+    <h3>Límite del sistema <span class="limite">Máx. 110 caracteres</span></h3>
+    <p>El objetivo indica qué resultado concreto deseas alcanzar con el proyecto. No debe describir solamente una actividad; debe señalar hacia dónde se dirige el trabajo.</p>
+    <p>Preferentemente debe comenzar con un verbo en infinitivo: <strong>analizar, identificar, diseñar, desarrollar, implementar, optimizar, estandarizar, evaluar, reducir, mejorar.</strong></p>
+    <div class="instruccion"><span class="etq">Estructura recomendada</span>Verbo + qué se realizará + para qué se realizará</div>
+    <div class="correcto"><span class="etq">Redacción final</span>Diseñar un control de inventarios para reducir diferencias y mejorar la confiabilidad de los registros</div>
+    <div class="conteo">≈ 102 caracteres</div>
+    <p>Esta redacción funciona porque señala: <strong>Acción</strong> (diseñar) · <strong>Objeto</strong> (control de inventarios) · <strong>Resultado</strong> (reducir diferencias) · <strong>Beneficio</strong> (mejorar la confiabilidad de los registros).</p>
+    <p>Ejemplos por área:</p>
     <ul>
-      <li><strong>Logística:</strong> Desarrollar un procedimiento de seguimiento de entregas para mejorar el control de los pedidos y reducir los retrasos en la distribución de mercancías.</li>
-      <li><strong>Mantenimiento:</strong> Diseñar un programa de mantenimiento preventivo para mejorar la disponibilidad de los equipos y reducir la ocurrencia de fallas no programadas.</li>
-      <li><strong>Tecnologías de la Información:</strong> Desarrollar una aplicación para registrar y consultar las solicitudes de soporte técnico, con el propósito de mejorar el seguimiento de los servicios realizados.</li>
-      <li><strong>Mercadotecnia:</strong> Diseñar una estrategia de comunicación digital para fortalecer la presencia de la empresa en redes sociales y mejorar la interacción con sus clientes.</li>
+      <li><strong>Logística:</strong> Diseñar un control de entregas para reducir retrasos y mejorar el seguimiento de los pedidos.</li>
+      <li><strong>Mantenimiento:</strong> Diseñar un plan de mantenimiento preventivo para reducir fallas y mejorar la disponibilidad.</li>
+      <li><strong>Tecnologías de la Información:</strong> Desarrollar un sistema de registro para mejorar el seguimiento de solicitudes de soporte.</li>
     </ul>
-    <div class="evita"><span class="etq">Evita objetivos como</span>"Ayudar a mejorar la empresa" (demasiado amplio) y "Hacer un Excel para inventarios" (Excel es solo una herramienta; la redacción debe enfocarse en el propósito).</div>
-    <div class="ejemplo"><span class="etq">Redacción recomendada</span>Desarrollar una herramienta digital para registrar las entradas y salidas de materiales y mejorar el control del inventario.</div>
+    <div class="evita"><span class="etq">Evita objetivos como</span>"Ayudar a mejorar la empresa" (demasiado general) y "Hacer un Excel" (describe una herramienta, no el objetivo).</div>
+    <div class="correcto"><span class="etq">Mejor redacción</span>Desarrollar una herramienta de control para mejorar el registro de entradas y salidas</div>
+    <div class="nota">Regla práctica: tu objetivo debe responder ¿qué voy a hacer? + ¿para qué lo voy a hacer?</div>
 
     <h2>7. Requerimientos</h2>
-    <p>Los requerimientos corresponden a los recursos, información, accesos, documentos, permisos o apoyos necesarios para desarrollar el proyecto.</p>
-    <div class="instruccion"><span class="etq">Instrucción</span>Registra solamente aquellos recursos que tengan una relación directa con las actividades previstas.</div>
-    <ul>
-      <li><strong>Inventarios:</strong> acceso a los registros de inventario, reportes de entradas y salidas, autorización para realizar conteos físicos y apoyo del personal responsable del almacén.</li>
-      <li><strong>Mantenimiento:</strong> acceso al historial de mantenimiento de los equipos, manuales técnicos, reportes de fallas y disponibilidad del personal responsable del área.</li>
-      <li><strong>Software:</strong> acceso al proceso actual de registro de solicitudes, entrevistas con los usuarios, equipo de cómputo y autorización para realizar pruebas del sistema.</li>
-    </ul>
-    <div class="evita"><span class="etq">Evita expresiones como</span>"Todo lo necesario" o "Computadora e internet". Los requerimientos deben proporcionar información suficiente para conocer qué condiciones serán necesarias para realizar el proyecto.</div>
+    <h3>Límite del sistema <span class="limite">Máx. 150 caracteres</span></h3>
+    <p>Indica los recursos necesarios para desarrollar el proyecto: información, reportes, bases de datos, formatos, manuales, acceso a sistemas, autorización para ingresar a determinadas áreas, apoyo del personal, entrevistas, equipos o registros históricos.</p>
+    <div class="correcto"><span class="etq">Ejemplo — inventarios</span>Acceso a kardex, reportes de entradas y salidas, conteos físicos y apoyo del responsable de almacén</div>
+    <div class="conteo">≈ 99 caracteres</div>
+    <div class="correcto"><span class="etq">Ejemplo — mantenimiento</span>Acceso a historial de fallas, manuales, órdenes de trabajo y apoyo del personal de mantenimiento</div>
+    <div class="correcto"><span class="etq">Ejemplo — software</span>Acceso a usuarios, proceso actual, registros de solicitudes y autorización para realizar pruebas</div>
+    <div class="evita"><span class="etq">Evita escribir</span>"Todo lo necesario" (demasiado ambiguo) o solo "Computadora e internet" (normalmente insuficiente).</div>
+    <div class="nota">Antes de continuar, pregúntate: ¿qué información o recurso podría impedir que desarrolle el proyecto si la empresa no me lo proporciona? Eso es lo que debes registrar.</div>
 
     <h2>8. Actividades principales</h2>
-    <p>Las actividades principales representan las acciones que permitirán alcanzar el objetivo establecido. RADAR contempla este apartado como parte del protocolo del proyecto.</p>
-    <div class="instruccion"><span class="etq">Instrucción</span>Describe las acciones principales en un orden lógico y progresivo. Secuencia útil: Analizar → Recopilar → Identificar → Diseñar → Implementar → Evaluar → Documentar.</div>
-    <p>Ejemplo para un proyecto de mejora de control de inventarios:</p>
-    <ol>
-      <li>Analizar el proceso actual de control de inventarios.</li>
-      <li>Recopilar los registros de entradas y salidas de materiales.</li>
-      <li>Realizar conteos físicos de inventario.</li>
-      <li>Identificar las principales diferencias encontradas.</li>
-      <li>Determinar las posibles causas de las diferencias.</li>
-      <li>Diseñar la propuesta de control.</li>
-      <li>Implementar la herramienta desarrollada.</li>
-      <li>Evaluar los resultados obtenidos.</li>
-      <li>Documentar el procedimiento final.</li>
-    </ol>
-    <div class="evita"><span class="etq">Evita actividades como</span>"Estar en almacén", "Ayudar al supervisor", "Apoyar con inventarios". Describen participación general, pero no una actividad académica o profesional concreta.</div>
-    <div class="ejemplo"><span class="etq">Redacción recomendada</span>"Analizar los registros de movimientos del almacén." · "Identificar las diferencias entre el inventario físico y los registros existentes." · "Diseñar un procedimiento para controlar las entradas y salidas de materiales."</div>
-
-    <h2>9. Datos de la entidad receptora</h2>
-    <h3>9.1 Nombre de la empresa o institución</h3>
-    <p>Registra el nombre oficial de la entidad receptora.</p>
-    <div class="ejemplo"><span class="etq">Ejemplo</span>LOGA EXPRESS, S.A. DE C.V.</div>
-    <p>Se recomienda evitar nombres comerciales incompletos, abreviaturas no oficiales o denominaciones informales.</p>
-
-    <h3>9.2 Nombre del asesor empresarial</h3>
-    <p>Registra el nombre completo de la persona designada por la empresa para brindar seguimiento a tu estadía y proyecto.</p>
-    <div class="ejemplo"><span class="etq">Ejemplo</span>Cesáreo David Lozano García</div>
-    <p>Verifica cuidadosamente la escritura de nombres y apellidos.</p>
-
-    <h3>9.3 Correo del asesor empresarial</h3>
-    <p>Captura el correo electrónico utilizado por el asesor empresarial.</p>
-    <div class="ejemplo"><span class="etq">Ejemplo</span>cesareo.lozano@logaexpress.com.mx</div>
-    <p>Antes de continuar, verifica que el correo esté escrito correctamente, no contenga espacios, incluya el símbolo @ y que el dominio de la empresa sea correcto.</p>
-
-    <h3>9.4 Horario de jornada laboral</h3>
-    <p>Registra los días y horarios en los cuales realizas tus actividades de estadía.</p>
-    <div class="ejemplo"><span class="etq">Ejemplo</span>Lunes a viernes de 08:00 a 17:00 horas.</div>
-    <p>Cuando exista más de un horario, indícalo de manera completa:</p>
-    <div class="ejemplo"><span class="etq">Ejemplo</span>Lunes a jueves de 08:00 a 17:00 horas y viernes de 08:00 a 15:00 horas.</div>
-    <div class="evita"><span class="etq">Evita expresiones generales</span>"Horario normal", "todo el día" o "según actividades".</div>
-
-    <h2>10. Ejemplo integral de un protocolo</h2>
-    <p>A continuación se presenta un ejemplo que muestra cómo debe existir congruencia entre los diferentes apartados.</p>
-    <div class="ejemplo">
-      <span class="etq">Nombre del proyecto</span>Mejora del control de inventarios en el almacén de refacciones<br><br>
-      <span class="etq">Alcance</span>Sí se implementará.<br><br>
-      <span class="etq">Descripción</span>Actualmente, el almacén presenta diferencias entre las existencias físicas y los registros de materiales debido al uso de diferentes medios para registrar las entradas y salidas. El proyecto analizará el proceso actual y desarrollará una herramienta que permita mejorar el control y seguimiento del inventario.<br><br>
-      <span class="etq">Objetivo</span>Diseñar e implementar un sistema de control de inventarios en el almacén de refacciones para mejorar el registro de entradas y salidas y reducir las diferencias entre las existencias físicas y los registros de la empresa.<br><br>
-      <span class="etq">Requerimientos</span>Acceso a reportes de inventario, registros de entradas y salidas, autorización para realizar conteos físicos y apoyo del personal responsable del almacén.<br><br>
-      <span class="etq">Actividades principales</span>Analizar el proceso actual de inventarios; recopilar los registros de entradas y salidas; realizar conteos físicos; identificar diferencias; determinar sus posibles causas; diseñar la herramienta de control; implementar la propuesta; evaluar los resultados y documentar el procedimiento.
+    <h3>Límite del sistema <span class="limite">Máx. 110 caracteres</span></h3>
+    <p>Menciona las acciones principales que realizarás para alcanzar el objetivo. No incluyas todas las tareas diarias; selecciona únicamente las actividades más importantes del proyecto.</p>
+    <div class="instruccion"><span class="etq">Secuencia recomendable</span>Analizar → Identificar → Diseñar → Implementar → Evaluar (también puedes usar: recopilar, revisar, medir, diagnosticar, comparar, documentar)</div>
+    <div class="correcto"><span class="etq">Ejemplo correcto</span>Revisar registros, realizar conteos, detectar diferencias, diseñar el control y evaluar resultados</div>
+    <div class="conteo">≈ 101 caracteres — funciona porque lleva de manera lógica hacia el objetivo: revisar información → comprobar la situación → identificar el problema → diseñar una solución → evaluar los resultados.</div>
+    <div class="evita"><span class="etq">Evita escribir</span>"Apoyar al supervisor" · "Estar en almacén" · "Realizar actividades de logística" — describen funciones generales de trabajo, no las actividades específicas del proyecto.</div>
+    <div class="nota">
+      <strong>Diferencia importante:</strong> una estadía no debe convertirse solamente en una lista de actividades laborales.<br><br>
+      <strong>Actividad laboral:</strong> Recibir materiales.<br>
+      <strong>Actividad de proyecto:</strong> Analizar el proceso de recepción para identificar errores y oportunidades de mejora.<br><br>
+      La segunda tiene un propósito de análisis y mejora, por lo que aporta directamente al proyecto.
     </div>
 
-    <h2>11. Congruencia entre los elementos del proyecto</h2>
-    <p>Un protocolo correctamente estructurado debe mantener una relación lógica entre todos sus componentes. Puede utilizarse la siguiente secuencia como referencia:</p>
-    <div class="instruccion"><span class="etq">Secuencia</span>Situación o problema → Objetivo → Actividades → Resultado esperado</div>
-    <div class="ejemplo">
-      <span class="etq">Situación identificada</span>Existen diferencias entre el inventario físico y los registros.<br><br>
-      <span class="etq">Objetivo</span>Diseñar un sistema que permita mejorar el control de inventarios.<br><br>
-      <span class="etq">Actividades</span>Analizar, recopilar información, identificar causas, diseñar, implementar y evaluar.<br><br>
-      <span class="etq">Resultado esperado</span>Contar con un proceso de inventario mejor controlado y con registros más confiables.
-    </div>
+    <h2>9. Diferencia entre descripción, objetivo y actividades</h2>
+    <p>Esta diferencia suele generar confusión, por lo que es importante comprenderla:</p>
+    <table>
+      <tr><th>Campo</th><th>Pregunta que responde</th><th>Ejemplo</th></tr>
+      <tr><td>Descripción</td><td>¿Qué problema o situación voy a atender?</td><td>Existen diferencias entre inventario físico y registros</td></tr>
+      <tr><td>Objetivo</td><td>¿Qué quiero lograr?</td><td>Diseñar un control para reducir las diferencias</td></tr>
+      <tr><td>Actividades</td><td>¿Qué voy a hacer para lograrlo?</td><td>Revisar, contar, identificar, diseñar y evaluar</td></tr>
+      <tr><td>Requerimientos</td><td>¿Qué necesito para hacerlo?</td><td>Reportes, kardex, acceso al almacén y apoyo del responsable</td></tr>
+      <tr><td>Alcance</td><td>¿Hasta dónde llegará el proyecto?</td><td>Diseño e implementación real</td></tr>
+    </table>
+    <p>Esta lógica debe mantenerse durante todo el proyecto.</p>
+
+    <h2>10. Congruencia entre todos los campos</h2>
+    <p>Uno de los criterios más importantes en la revisión académica será la congruencia. No debes presentar un problema en la descripción, otro tema en el objetivo y actividades completamente distintas: todo debe seguir una misma línea.</p>
+    <div class="instruccion"><span class="etq">Secuencia</span>Problema → Objetivo → Recursos → Actividades → Resultado</div>
     <div class="nota">Una recomendación sencilla es revisar cada actividad y preguntarse: ¿esta actividad contribuye directamente al cumplimiento del objetivo? Si la respuesta es no, deberá revisarse la actividad o reconsiderarse la formulación del objetivo.</div>
 
-    <h2>12. Revisión previa al envío</h2>
-    <p>Antes de enviar el protocolo para su revisión académica, verifica lo siguiente:</p>
-    <ul class="checklist">
-      <li>Los datos personales y académicos son correctos.</li>
-      <li>El programa educativo corresponde a tu carrera.</li>
-      <li>El horario de asesoría es el previamente establecido.</li>
-      <li>El nombre del proyecto describe claramente qué se realizará.</li>
-      <li>El alcance indica correctamente si el proyecto será implementado.</li>
-      <li>La descripción explica la situación actual, la necesidad y la propuesta.</li>
-      <li>El objetivo inicia con un verbo en infinitivo y expresa un resultado concreto.</li>
-      <li>Los requerimientos corresponden a recursos realmente necesarios.</li>
-      <li>Las actividades mantienen relación directa con el objetivo.</li>
-      <li>Los datos de la empresa y del asesor empresarial son correctos.</li>
-      <li>La redacción presenta adecuada ortografía, puntuación y claridad.</li>
-      <li>No existen contradicciones entre la descripción, el objetivo y las actividades.</li>
-    </ul>
+    <h2>11. Errores frecuentes que debes evitar</h2>
+    <div class="evita"><span class="etq">Objetivos demasiado generales</span><strong>Incorrecto:</strong> Mejorar la empresa.<br><strong>Correcto:</strong> Diseñar un control de inventarios para reducir diferencias en los registros.</div>
+    <div class="evita"><span class="etq">Actividades convertidas en objetivos</span><strong>Incorrecto:</strong> Revisar reportes y hacer conteos — eso corresponde a actividades.</div>
+    <div class="evita"><span class="etq">Herramientas usadas como objetivo</span><strong>Incorrecto:</strong> Crear un Excel.<br><strong>Correcto:</strong> Desarrollar una herramienta de control para mejorar el registro de inventarios.</div>
+    <div class="evita"><span class="etq">Descripciones demasiado extensas</span>Recuerda que RADAR limita este campo a 110 caracteres. Ve directamente al problema y a la propuesta.</div>
+    <div class="evita"><span class="etq">Actividades sin relación con el proyecto</span>Si tu objetivo trata sobre inventarios, no deberían aparecer actividades como "Publicar contenido en redes sociales". Todo debe contribuir al mismo proyecto.</div>
 
-    <h2>13. Revisión y dictamen académico</h2>
+    <h2>12. Datos de la entidad receptora</h2>
+    <h3>12.1 Nombre de la empresa o institución</h3>
+    <p>Registra el nombre oficial de la entidad receptora, evitando nombres comerciales incompletos o denominaciones informales.</p>
+    <div class="ejemplo"><span class="etq">Ejemplo</span>LOGA EXPRESS, S.A. DE C.V.</div>
+
+    <h3>12.2 Nombre del asesor empresarial</h3>
+    <p>Registra el nombre completo de la persona designada por la empresa para brindar seguimiento a tu estadía y proyecto.</p>
+    <div class="ejemplo"><span class="etq">Ejemplo</span>Cesáreo David Lozano García</div>
+
+    <h3>12.3 Correo del asesor empresarial</h3>
+    <div class="ejemplo"><span class="etq">Ejemplo</span>cesareo.lozano@logaexpress.com.mx</div>
+    <p>Verifica que el correo esté escrito correctamente, no contenga espacios, incluya el símbolo @ y que el dominio de la empresa sea correcto.</p>
+
+    <h3>12.4 Horario de jornada laboral</h3>
+    <div class="ejemplo"><span class="etq">Ejemplo</span>Lunes a viernes de 08:00 a 17:00 horas.</div>
+    <div class="evita"><span class="etq">Evita expresiones generales</span>"Horario normal", "todo el día" o "según actividades".</div>
+
+    <h2>13. Ejemplo completo listo para RADAR</h2>
+    <p>A continuación se presenta un protocolo dentro de los límites de caracteres establecidos por el sistema:</p>
+    <div class="correcto">
+      <span class="etq">Nombre del proyecto</span>Sistema de control de inventarios <em>(≈33 caracteres)</em><br><br>
+      <span class="etq">Alcance</span>Práctico / Implementación real<br><br>
+      <span class="etq">Descripción</span>Controlar entradas y salidas para reducir diferencias entre inventario físico y registros <em>(≈89 caracteres)</em><br><br>
+      <span class="etq">Objetivo</span>Diseñar un control de inventarios para reducir diferencias y mejorar la confiabilidad de los registros <em>(≈102 caracteres)</em><br><br>
+      <span class="etq">Requerimientos</span>Acceso a kardex, reportes de entradas y salidas, conteos físicos y apoyo del responsable de almacén <em>(≈99 caracteres)</em><br><br>
+      <span class="etq">Actividades</span>Revisar registros, realizar conteos, detectar diferencias, diseñar el control y evaluar resultados <em>(≈98 caracteres)</em><br><br>
+      <span class="etq">Día y hora de cita</span>Jueves de 9:00 pm a 9:45 pm
+    </div>
+
+    <h2>14. Revisión antes de guardar y enviar</h2>
+    <p>Antes de seleccionar <strong>Guardar Avance Borrador</strong> o enviar el protocolo para revisión académica, verifica lo siguiente:</p>
+    <ul class="checklist">
+      <li>El nombre identifica claramente el proyecto y respeta el límite de 5 a 55 caracteres.</li>
+      <li>La descripción presenta una situación concreta dentro de 110 caracteres.</li>
+      <li>El objetivo comienza con una acción clara y señala un resultado esperado, dentro de 110 caracteres.</li>
+      <li>Las actividades permiten cumplir el objetivo, dentro de 110 caracteres.</li>
+      <li>Los requerimientos son realmente necesarios, dentro de 150 caracteres.</li>
+      <li>El alcance corresponde a lo que podrás realizar.</li>
+      <li>Todos los campos se refieren al mismo proyecto (existe congruencia).</li>
+      <li>El horario de asesoría es correcto y específico.</li>
+      <li>Los datos de la empresa y del asesor empresarial son correctos.</li>
+      <li>No existen errores de ortografía ni contradicciones entre campos.</li>
+    </ul>
+    <div class="nota">El formulario incluye la opción <strong>Guardar Avance Borrador</strong>, la cual permite conservar la información mientras todavía se encuentra en proceso de elaboración.</div>
+
+    <h2>15. Revisión y dictamen académico</h2>
     <p>Una vez que el protocolo sea enviado, deberá ser revisado por el asesor académico. El sistema RADAR permite al asesor registrar observaciones y emitir un dictamen mediante las opciones <strong>Aprobar Protocolo, Solicitar Cambios o Reportar Incidencia</strong>.</p>
     <p>Por esta razón, el envío del protocolo representa el inicio del proceso de revisión y no necesariamente su aprobación definitiva.</p>
     <div class="instruccion"><span class="etq">Cuando el asesor solicite modificaciones</span>Revisar las observaciones → realizar las correcciones → verificar nuevamente la información → presentar la versión corregida.</div>
-    <p>Las observaciones académicas tienen como propósito fortalecer la estructura del proyecto y asegurar que pueda desarrollarse adecuadamente durante la estadía.</p>
 
-    <h2>14. Recomendación final</h2>
-    <p>Antes de concluir la captura, verifica que tu protocolo permita responder claramente las siguientes preguntas:</p>
+    <h2>16. Recomendación final</h2>
+    <p>Antes de concluir la captura, intenta explicar tu proyecto utilizando solamente esta frase:</p>
+    <div class="frase-final">Voy a desarrollar __________ para solucionar o mejorar __________ mediante __________.</div>
+    <p>Si puedes completar esa frase con claridad y coincide con lo registrado en RADAR, tu protocolo tiene una estructura coherente. Verifica también que puedas responder:</p>
     <ul class="checklist">
       <li>¿Qué situación, necesidad o problema será atendido?</li>
-      <li>¿Qué proyecto se desarrollará?</li>
-      <li>¿Qué se pretende lograr?</li>
+      <li>¿Qué proyecto se desarrollará y qué se pretende lograr?</li>
       <li>¿Qué actividades permitirán alcanzar el objetivo?</li>
       <li>¿Qué recursos serán necesarios?</li>
-      <li>¿El proyecto será implementado?</li>
-      <li>¿Qué resultado se espera entregar a la empresa?</li>
+      <li>¿Hasta dónde llegará el proyecto (alcance)?</li>
     </ul>
-    <div class="nota">El protocolo debe representar un proyecto viable, pertinente y relacionado con tu formación profesional. Una buena redacción no consiste en utilizar términos complicados, sino en expresar las ideas con precisión, orden y claridad.</div>
+    <div class="nota">El protocolo debe representar un proyecto viable, pertinente y relacionado con tu formación profesional. Una buena redacción no consiste en utilizar términos complicados, sino en expresar las ideas con precisión, orden y claridad — respetando siempre los límites de caracteres del sistema.</div>
 
 
       <div class="responsable">
